@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <script>
+            function one(x) {
+                function two(y) {
+                    console.log(x*y);
+                }
+                return two
+            }
+let result=one(5)
+console.log(result);
+result(5)
+        </script>
+    </body>
+</html>

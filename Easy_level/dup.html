@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <style>
+             .aaa{
+                position: relative;
+                margin-left:500px ;
+        border: 2px solid black;
+        width: 400px;
+        height: 500px;
+        
+        margin-top: 100px;
+        
+             }
+            
+        </style>
+    </head>
+    <body >
+        <div class="aaa">
+     <center>  <h2  id="rrr" >Registration  form</h2></center><br><br>
+            <form  id="ap"  action="">
+     <center><label for="First name">First name: </label> <input  type="text"></center> 
+     <p id="fn"  style="display: none;">firstname length must be 5 letters</p><br><br>  
+     
+<center> <label for="second name">Second  name:</label> <input  type="text">  <br><br></center>
+
+<center> <label for="Date dateOfBirth">Date of birth:</label> <input  type="text"> <br><br></center>
+
+   <center> <label for="Email">Email:</label> <input  type="text">  <br><br></center>
+     <p id="em"  style="display: none; color: red;">Must be using characters,numbers</p><br> 
+     
+     
+     <center> <label for="Password">Password:</label> <input  type="text"> <br><br></center>
+     <p id="pp"  style="display: none; color:red;">At least 8 characters</p><br> 
+
+     <center><label for="Ph no">Ph no:</label> <input  type="text"> <br><br></center>
+     <p id="pn"  style="display: none; color:red;">start with 6 or 7 or 8 or 9</p><br>
+
+             
+     <center><input  style="background-color: crimson; margin-left:110px;" type="submit" value="Submit"><br><br>  </center>
+  
+     <center><input  style="background-color: cornflowerblue;margin-left:110px" type="reset" value="Reset">  <br><br></center>
+     
+
+
+
+ </form>
+
+
+
+ 
+ </div>
+        <script>
+        console.log(document.forms[0]);
+        document.forms[0].addEventListener("submit",function(ap){
+            ap.preventDefault();
+            console.log(ap);
+            console.log(ap.target[0].value);
+            console.log(ap.target[1].value);
+            console.log(ap.target[2].value);
+            console.log(ap.target[3].value);
+            console.log(ap.target[4].value);
+            console.log(ap.target[5].value);
+            var firstName = ap.target[0].value;
+    var secondName = ap.target[1].value;
+    var dateOfBirth = ap.target[2].value;
+    var email = ap.target[3].value;
+    var password = ap.target[4].value;
+    var phno = ap.target[5].value;
+            
+            if (firstName === "") {
+    ap.target[0].style.border = "2px solid pink"; // Fixed the border style syntax
+    console.log("dfgh");
+}
+            if(ap.target[1].value===" "){
+                ap.target[1].style.border="2 px solid pink"
+            }
+            if(ap.target[2].value===" "){
+                ap.target[2].style.border="2 px solid pink"
+            }
+            if(ap.target[3].value===" "){
+                ap.target[3].style.border="2 px solid pink"
+            }
+            if(ap.target[4].value===" "){
+                ap.target[4].style.border="2 px solid pink"
+            }
+            if(ap.target[5].value===" "){
+                ap.target[5].style.border="2 px solid pink"
+            }
+            if(firstName.length=="5"){
+                var name=document.getElementById("fn");
+                name.style.display="none" ;
+            }
+            else{
+                var name=document.getElementById("fn");
+                name.style.display="none";
+            }
+            //email
+            if(email=="Must be using characters,numbers"){
+                var mail=document.getElementById("em");
+                mail.style.display="none" ;
+            }
+            else{
+                var mail=document.getElementById("em");
+                mail.style.display="none";
+            } 
+            //password
+            if(password=="At least 8 characters"){
+                var p1=document.getElementById("pp");
+                p1.style.display="none" ;
+            }
+            else{
+                var p1=document.getElementById("pp");
+                p1.style.display="none";
+            }  
+            //ph no
+            if ( phno[0] === "6" || phno[0] === "7" || phno[0] === "8" || phno[0] === "9" ){ 
+
+                var p=document.getElementById("pn");
+                p.style.color="yellow" ;
+                p.style.display="none" ;
+            }
+            else{
+                var p1=document.getElementById("pn");
+                p1.style.display="block";
+            } 
+             if (firstName.length==5 && firstName[0]==firstName[0]&& Email[3]=="Must be using characters,numbers"&& Password[4]=="At least 8 characters " && phno[5]=="start with 6 or 7 or 8 or 9" ){
+
+             console.log(" succesful");
+             }
+
+            
+            })
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

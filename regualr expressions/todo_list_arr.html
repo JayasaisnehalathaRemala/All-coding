@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #3f3b3b;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main {
+        border: 2px solid black;
+        margin: 5% auto;
+        width: 40%;
+        height: auto;
+        border-radius: 20px;
+        background-color: rgba(187, 206, 187, 0.801);
+        padding: 20px;
+      }
+
+      input {
+        border: none;
+        border-radius: 15px;
+        padding: 10px;
+        margin: 20px 0;
+        font-size: 18px;
+        width: 70%;
+      }
+
+      input:focus {
+        border: 2px solid skyblue;
+      }
+
+      #btn {
+        border: none;
+        border-radius: 15px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #56afef;
+        color: white;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        border: 2px solid #56afef;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 18px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      button {
+        background-color: #56afef;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 5px 10px;
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+      }
+
+      #delall {
+        display: block;
+        margin: 20px auto;
+        background-color: #e74c3c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To-Do List using arrays</h1>
+    <div class="main">
+      <form id="main">
+        <input type="text" id="input" placeholder="Type your task here...." />
+        <button id="btn">Add</button>
+      </form>
+      <ul id="arrayItem"></ul>
+      <button id="delall">Delete all</button>
+    </div>
+    <script>
+      var array = [];
+      console.log(document.forms[0]);
+      let refresh = document.getElementById("main");
+      let takingInput = document.getElementById("input");
+      let adding = document.getElementById("arrayItem");
+      refresh.addEventListener("submit", function (event) {
+        event.preventDefault();
+        adding.innerHTML="";
+        let addingTask = takingInput.value;
+        if (addingTask != "") {
+          array.push(addingTask);
+          for (var i = 0; i < array.length; i++) {
+           
+            let taskadd = document.createElement("li");
+            let textadd = document.createElement("span");
+            textadd.innerText = array[i];
+            taskadd.appendChild(textadd);
+         
+          let del = document.createElement("button");
+          del.innerText = "Delete";
+          del.addEventListener("click", function () {
+            removeTask(taskadd,array[i]);
+          });
+          let done = document.createElement("button");
+          done.innerText = "Done";
+          done.addEventListener("click", function () {
+            textadd.style.textDecoration = "line-through";
+          });
+          let edit = document.createElement("button");
+          edit.innerText = "Edit";
+          edit.addEventListener("click", function () {
+            editTask(textadd,array,i)
+          });
+          taskadd.appendChild(edit);
+          taskadd.appendChild(done);
+          taskadd.appendChild(del);
+          adding.appendChild(taskadd);
+          takingInput.value = "";
+          console.log(array);
+        } 
+
+          function removeTask(taskadd) {
+            taskadd.remove();
+            if (array[i] == taskadd.innerText) {
+              array.splice(i, 1);
+              console.log(array);
+            }
+          }
+ }
+ function editTask(textElement, array, index) {
+    var addIt = prompt("Enter the word : ");
+    if (addIt != "") {
+      textElement.innerText = addIt;
+      array[index] = addIt;
+      console.log(array);
+    }
+}
+      });
+      let delall = document.getElementById("delall");
+      delall.addEventListener("click", function () {
+        adding.innerText = "";
+      });
+    </script>
+  </body>
+</html>

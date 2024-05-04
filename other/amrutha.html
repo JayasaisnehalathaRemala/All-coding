@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .li{
+            text-decoration: none;
+          }
+          </style>
+      
+</head>
+
+
+<body>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    
+    <img src="">
+    
+
+<script>
+        var eee=localStorage.getItem("reeethu");
+        var eee1=JSON.parse(eee);
+        console.log(eee1);
+
+
+ var ant=localStorage.getItem("geeethu");
+     var ant1=JSON.parse(ant);
+        console.log(ant1);
+
+         var rose=localStorage.getItem("teeethu");
+        var rose1=JSON.parse(rose);
+         console.log(rose1);
+
+
+         var aple=localStorage.getItem("ap");
+        var aple1=JSON.parse(aple);
+ console.log(aple1);
+
+
+         var ap=localStorage.getItem("lion");
+        var ap1=JSON.parse(ap);
+         console.log(ap1);
+
+
+
+ let aaa=document.querySelectorAll("li");
+        //  all
+        aaa[0].innerText=eee1["id"];
+
+          aaa[1].innerText=eee1["title"];
+           aaa[2].innerText=eee1["description"];
+          aaa[3].innerText=eee1["price"]; 
+           aaa[4].innerText=eee1["rating"];
+           
+  let adk=document.querySelector("img");
+   adk.setAttribute("src",eee1["image"]);
+  adk.style.width="150px" 
+  adk.style.height="150px";
+
+
+  let bb=document.querySelectorAll("li");
+        //  all
+        bb[0].innerText=ant1["id"];
+
+          bb[1].innerText=ant1["title"];
+           bb[2].innerText=ant1["description"];
+          bb[3].innerText=ant1["price"]; 
+           bb[4].innerText=ant1["rating"];
+
+let adkMen = document.querySelector("img"); // Use a different variable name
+adkMen.setAttribute("src", ant1["image"]);
+adkMen.style.width = "150px";
+adkMen.style.height = "150px";
+  
+// // men
+
+// let aaa1=document.querySelectorAll("li");
+
+//    aaa1[0].innerText=ant1["id"] 
+//        aaa1[1].innerText=ant1["title"]     
+//      aaa1[2].innerText=ant1["description"];
+//      aaa1[3].innerText=ant1["price"]; 
+//       aaa1[4].innerText=ant1["rating"];
+
+
+
+//    let adk1=document.querySelector("img");
+//        adk1.setAttribute("src",ant1["image"]);
+//      adk1.style.width="150px";
+//      adk1.style.height="150px";
+// // // women
+
+//  aaa[0].innerText=rose1["id"] 
+// aaa[1].innerText=rose1["title"];
+// aaa[2].innerText=rose1["description"];
+// aaa[3].innerText=rose1["price"]; 
+//  aaa[4].innerText=rose1["rating"];
+
+//    let adk2=document.querySelector("img");
+//       adk2.setAttribute("src",rose1["image"])
+//          adk2.style.width="150px";
+//     adk2.style.height="150px";
+
+// // jewelery
+// let and=document.querySelectorAll("li");
+
+//     and[0].innerText=aple1["id"] 
+//    and[1].innerText=aple1["title"];
+//     and[2].innerText=aple1["description"];
+//    and[3].innerText=aple1["price"]; 
+// and[4].innerText=aple1["rating"];
+
+//    let adk3=document.querySelector("img") 
+//      adk3.setAttribute("src",aple1["image"]);
+//     adk3.style.width="150px";
+//     adk3.style.height="150px";
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

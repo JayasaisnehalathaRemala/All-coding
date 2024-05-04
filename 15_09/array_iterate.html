@@ -1,0 +1,99 @@
+<!-- 1.forEach
+2.map
+3.filter
+4.reduce
+5.find
+6.every
+7.some
+
+normal function
+
+function functionName (parameters) {
+    code                                                   function Defintion
+}
+functionName(arguments)            ==============      function calling
+
+
+arrow function
+
+let a=(parameter)=>{
+
+} 
+
+console.log(a())
+
+
+anonomoyus function 
+let a=function() {
+    code 
+}
+console.log(a())
+array=[1,2,3,4,5]
+
+Syntax   = arrayName. forEach(callbackfunction)  -->
+
+
+<html>
+    <body>
+        <script> 
+// let a=["akhil","sneha","yogesh","sravani","goipka"]
+
+// a.forEach((value,index,array)=>{
+//   console.log(array)
+// })
+
+// a.forEach(one) 
+
+// function one(value,index,array) {
+//     console.log(value)
+// }
+
+// anonomoyous function
+
+// a.forEach(function(value,index,array){
+//  console.log(array)
+// })
+
+                    
+// let b=[1,2,3,4,5,6,7,8]
+// b.forEach((value,index,array)=>{
+//     console.log(value)
+    
+// })
+// ==>  for condition it will boolean values normally
+// ==> return doesnt Work
+// ===> value index and array are printing in strings,objects
+
+// let akhil=b.map((value,index,array)=>{
+//     return value%2==0;
+    
+// })
+// console.log(akhil)
+
+// ==>  by using map if you give any condition it will print values in array as booelan 
+// ==>  you have to assign to a variable if you give return in function
+
+
+
+
+// filter          
+     
+let b=[1,2,3,4,5,6,7,8]
+let akhil=b.forEach((value,index,array)=>{
+    return value>3;         
+})
+console.log(akhil)
+
+
+// in filter it give only filtered values based on the condition you give 
+
+        </script>
+
+
+    </body>
+</html>
+
+
+
+
+

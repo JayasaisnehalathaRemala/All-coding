@@ -1,0 +1,31 @@
+let a=[{name:"snhea",
+age:22},
+{
+name:"gopika",
+age:33},
+{
+name:"sravani",
+age:24 },
+{
+name:"priyanka",
+age:32 },
+{
+name:"vasavi",
+age:38 },
+]
+var b=[]
+let fil=a.filter((value)=>
+{
+let val=false;
+    for( i in a) {
+    if(value.age<i.age){
+     val=true
+    }
+    }
+    if(val) {
+    b.push(value)
+    }
+    return b;
+}
+)
+console.log(fil)

@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+      }
+      #ten {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(204, 202, 202);
+        width: 35%;
+        margin: 50px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+      }
+      #seven {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        margin-left: 20px;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid grey;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      li {
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        margin: 5px;
+      }
+      #two {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      #five {
+        display: inline-block;
+        margin-right: 37px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; margin-top: 30px; color: rgb(204, 202, 202)">
+      To-do List
+    </h1>
+    <div id="ten">
+      <input type="text" id="one" placeholder="type your task here......" />
+      <button id="two">Add it</button>
+      <div id="seven">
+        <ul id="three"></ul>
+        <button id="five">Delete All</button>
+      </div>
+    </div>
+    <script>
+      let a = document.getElementById("one");
+      let b = document.getElementById("two");
+      let c = document.getElementById("three");
+      let delall = document.getElementById("five");
+
+      b.addEventListener("click", function () {
+        if (a.value === "") {
+          alert("Please enter someting");
+        } else {
+          let list1 = document.createElement("li");
+          list1.innerHTML = a.value;
+          list1.style.fontSize = "20px";
+          let done = document.createElement("button");
+          done.innerText = "Done";
+          done.style.backgroundColor = "green";
+          done.style.borderRadius = "6px";
+          done.style.marginLeft = "20px";
+          done.addEventListener("click", function () {
+            list1.style.textDecoration = "line-through";
+          });
+          let del = document.createElement("button");
+          del.innerText = "delete";
+          del.style.backgroundColor = "red";
+          del.style.borderRadius = "6px";
+          del.style.marginLeft = "6px";
+          del.addEventListener("click", function () {
+            c.removeChild(list1);
+          });
+          list1.appendChild(done);
+          list1.appendChild(del);
+          c.appendChild(list1);
+        }
+        a.value = "";
+      });
+      delall.style.backgroundColor = "#007bff";
+          delall.style.marginRight = "20px";
+          delall.addEventListener("click", function () {
+            c.removeChild(list1);
+          });
+    </script>
+  </body>
+</html>

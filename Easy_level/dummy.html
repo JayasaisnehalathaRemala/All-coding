@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #igi {
+            background-color: aqua;
+            color: green;
+            padding: 10px;
+        }
+        table, tr, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div id="divv"></div>
+
+    <table id="tab">
+        <tbody></tbody>
+    </table>
+
+    <script>
+        let varrr = [
+            // ... your data ...
+        ];
+
+        var table = document.getElementById("tab");
+        console.log(table);
+
+        let btn = document.createElement("button");
+        btn.innerText = "mens";
+        document.body.appendChild(btn);
+        btn.addEventListener("click", () => {
+            hello();
+            var a = [];
+            for (i = 0; i < varrr.length; i++) {
+                if (varrr[i].category == "men's clothing") {
+                    a.push(varrr[i]);
+                }
+            }
+            varrr = a;
+            name(a);
+        });
+
+        let btn1 = document.createElement("button");
+        btn1.innerText = "jel";
+        document.body.appendChild(btn1);
+        btn1.addEventListener("click", () => {
+            hello();
+            var b = [];
+            for (i = 0; i < varrr.length; i++) {
+                if (varrr[i].category == "jewelery") {
+                    b.push(varrr[i]);
+                }
+            }
+            varrr = b;
+            name(b);
+        });
+
+        let btn2 = document.createElement("button");
+        btn2.innerText = "womens";
+        document.body.appendChild(btn2);
+        btn2.addEventListener("click", () => {
+            hello();
+            var c = [];
+            for (i = 0; i < varrr.length; i++) {
+                if (varrr[i].category === "women's clothing") {
+                    c.push(varrr[i]);
+                }
+            }
+            varrr = c;
+            name(c);
+        });
+
+        let btn3 = document.createElement("button");
+        btn3.innerText = "ele";
+        document.body.appendChild(btn3);
+        btn3.addEventListener("click", () => {
+            hello();
+            var d = [];
+            for (i = 0; i < varrr.length; i++) {
+                if (varrr[i].category == "electronics")
+                    d.push(varrr[i]);
+            }
+            varrr = d;
+            name(d);
+        });
+
+        let btn4 = document.createElement("button");
+        btn4.innerText = "all";
+        document.body.appendChild(btn4);
+        btn4.addEventListener("click", () => {
+            hello();
+            var e = [];
+            for (i = 0; i < varrr.length; i++) {
+                e.push(varrr[i]);
+            }
+            name(e);
+        });
+
+        function name(aa1) {
+            varrr.map((val, ind, arr) => {
+                var trcreated = document.createElement("tr");
+                var tdcreated = document.createElement("td");
+                tdcreated.innerText = val.id;
+                var tdcreated1 = document.createElement("td");
+                tdcreated1.innerText = val.title;
+                var tdcreated2 = document.createElement("td");
+                tdcreated2.innerText = val.price;
+                var tdcreated3 = document.createElement("td");
+                let imgcreated = document.createElement("img");
+                imgcreated.setAttribute("src", val.image);
+                imgcreated.style.width = "40px";
+                imgcreated.style.height = "40px";
+                tdcreated3.appendChild(imgcreated);
+                var tdcreated4 = document.createElement("td");
+                tdcreated4.innerText = val.description;
+                var tdcreated5 = document.createElement("td");
+                tdcreated5.innerText = val.category;
+                var tdcreated6 = document.createElement("td");
+                tdcreated6.innerText = val.rating.rate;
+                var tdcreated7 = document.createElement("td");
+                tdcreated7.innerText = val.rating.count;
+                trcreated.appendChild(tdcreated);
+                trcreated.appendChild(tdcreated1);
+                trcreated.appendChild(tdcreated2);
+                trcreated.appendChild(tdcreated4);
+                trcreated.appendChild(tdcreated5);
+                trcreated.appendChild(tdcreated6);
+                trcreated.appendChild(tdcreated7);
+                trcreated.appendChild(tdcreated3);
+                table.getElementsByTagName('tbody')[0].appendChild(trcreated);
+            });
+        }
+
+        function hello() {
+            // Clear the table content
+            table.getElementsByTagName('tbody')[0].innerHTML = "";
+        }
+    </script>
+</body>
+</html>

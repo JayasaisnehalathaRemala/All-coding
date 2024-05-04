@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <button id="myButton">rt</button>
+    <img src="" alt="">
+    <button onclick="back()">Back Going</button>
+    <h1>Welcome to new JavaScript topic-Bom</h1>
+    <p>The Browser Object Model (BOM) is used to interact with the browser.</p>
+    <script>
+        // let back=()=>{
+        //     window.history.back()
+        //     // window.close()
+        // }
+
+        // var r=localStorage.getItem("rrrsetting");
+        // console.log(r);
+        // var datagetting=localStorage.getItem("addinginfo");
+        // datagettings=JSON.parse(datagetting)
+        // console.log(datagettings);
+
+        // let para=document.querySelectorAll("p");
+        
+        
+        // para[0].innerText=datagettings["id"];
+        // para[1].innerText=datagettings["category"];
+        // para[2].innerText=datagettings["description"];
+        // // lists.style.listStyleType = "none";
+       
+        
+       
+        // let imgget=document.querySelector("img");
+        // imgget.setAttribute("src",datagettings["image"]);
+        // imgget.style.width="150px"
+        // imgget.style.height="150px"
+        console.log(this === window); // In a web browser, this will be true
+
+//         function sayHell() {
+//             var a="ufgh"
+//   console.log(this);
+// }
+
+// sayHell(); // In a browser, 'this' refers to 'window' (or undefined in strict mode)
+const person = {
+  name: 'John',
+  age : "gh",
+  sayHello: function () {
+    console.log(this);
+  },
+};
+
+person.sayHello(); // 'this' refers to the 'person' object
+
+function Person(name) {
+  this.name = name;
+}
+
+const john = new Person('John');
+console.log(john.name); // 'this' refers to the 'john' object
+
+
+const button = document.getElementById('myButton');
+button.addEventListener('click', function () {
+  console.log(this); // 'this' refers to the button element
+});
+function sathya() {
+    let obj={
+        name:"hfdef",
+        age:"jnvjksc"
+    }
+}
+
+    </script>
+
+    
+</body>
+</html>

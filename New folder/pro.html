@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <script>
+            const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise resolved");
+  }, 6000);
+});
+
+myPromise.then((result) => {
+  console.log(result); // Output: Promise resolved
+});
+
+        </script>
+    </body>
+</html>

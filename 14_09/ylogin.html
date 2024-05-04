@@ -1,0 +1,139 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in page</title>
+  </head>
+  <style>
+    body{
+        background-color: darkgray;
+    }
+    [type="text"] {
+      padding: 4px;
+      margin-top: 4px;
+      margin-left: 400px;
+    }
+    [type="password"] {
+      padding: 4px;
+      margin-top: 4px;
+      margin-left: 400px;
+    }
+    button {
+      margin-left: 400px;
+      margin-top: 20px;
+      color: white;
+      background-color:dimgray;
+      outline: none;
+      border: none;
+      height: 25px;
+      width: 180px;
+    }
+    form {
+      margin-top: 20px;
+    }
+   
+   
+  </style>
+  <body>
+    <h2 style="margin-left: 427px; letter-spacing: 7px;" >KETCH</h2>
+   
+    <form action="">
+      <input  type="text" placeholder="Username" height="10px" width="120px" ><br />
+      <span id="userSpan" style="font-size: 10px;color:black;display:none;">Name should start with Y or y and should contain atleast 5 letters</span>
+
+      <input  type="password" placeholder="Password" height="10px" width="120px"><br />
+      <span id="passwordSpan" style="font-size: 10px;color:black;display:none;">password not matched.please enter correct password</span>
+      <button>Log In</button>
+    </form>
+    <script>
+      console.log(document.forms);
+      getForm = document.forms[0];
+      console.log(getForm);
+      getForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        console.log(event);
+        console.log(event.target[0].value);
+        console.log(event.target[1].value);
+       
+
+        var auserName = event.target[0].value;
+        var apassWord = event.target[1].value;
+       
+        //userName
+        if (auserName.length >= 5 &&(auserName[0]>="A"||auserName[0]<="Z"||auserName[0]>="a"||auserName[0]<="z")) {
+          let getuserSpan = document.getElementById("userSpan");
+          getuserSpan.style.display = "none";
+          event.target[0].style.border = "1px solid black";
+        } else {
+          let getuserSpan = document.getElementById("userSpan");
+          getuserSpan.style.display = "block";
+          event.target[0].style.border = "3px solid red";
+        }
+
+        //password and confirmPassword
+        // if (apassWord == confirmPassword) {
+        //   let getpasswordSpan = document.getElementById("passwordSpan");
+        //   getpasswordSpan.style.display = "none";
+        //   event.target[1].style.border="3px solid red";
+        //   event.target[2].style.border = "1px solid black";
+        // } else {
+        //   let getpasswordSpan = document.getElementById("passwordSpan");
+        //   getpasswordSpan.style.display = "block";
+        //   event.target[1].style.border="3px solid red";
+        //   event.target[2].style.border = "3px solid red";
+        // }
+        var isAuthenticated = false; // Initialize as false
+        // Retrieve user data from localStorage
+         var users = JSON.parse(localStorage.getItem("users"));
+        console.log(users);
+        for (var i = 0; i < users.length; i++) {
+        var user = users[i];
+        if (user.username === auserName && user.password === apassWord) {
+            isAuthenticated = true;
+            alert("login sucessfull!!!")
+            window.open("actual_page.html")
+            console.log(isAuthenticated);
+            break; // Exit the loop if a matching user is found
+        }
+        else{
+        console.log(isAuthenticated);
+        alert("User not Registered");
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // if(userName.length >= 5 &&(userName[0] == "Y" || userName[0] == "y") && passWord == confirmPassword){
+        //   alert("Registraion successfull!!!!");
+        //   window.open("JS_30_09_Practise_mini.html");
+        // }
+      });
+    </script>
+  </body>
+</html> -->
+
+<html>
+  <body>
+    <script>
+      var obj={key:"value",sneha:"sathya"}
+      var c=toString(obj)
+      console.log(c);
+    </script>
+  </body>
+</html>

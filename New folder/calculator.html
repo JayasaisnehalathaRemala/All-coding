@@ -1,0 +1,41 @@
+<html>
+  <head> 
+<link rel="stylesheet" href="calc.css">
+ </head>
+  <body>
+    <script src="calc.js"></script>
+    <div>
+        <table >
+            <tr>
+                <td colspan="4" style="padding: 20px;" id="display"></td>
+            </tr>
+            <tr>
+                <td onclick="append('7')">7</td>
+                <td onclick="append('8')">8</td>
+                <td onclick="append('9')">9</td>
+                <td onclick="append('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="append('4')">4</td>
+                <td onclick="append('5')">5</td>
+                <td onclick="append('6')">6</td>
+                <td onclick="append('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="append('1')">1</td>
+                <td onclick="append('2')">2</td>
+                <td onclick="append('3')">3</td>
+                <td onclick="append('*')">*</td>
+            </tr>
+            <tr>
+                <td onclick="append('0')">0</td>
+                <td onclick="clearAll()">c</td>
+                <td onclick="append('/')">/</td>
+                <td onclick="appendEqual()">=</tSd>
+
+            </tr>
+        </table>
+    </div>
+
+  </body>
+</html>

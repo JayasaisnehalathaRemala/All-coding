@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <script>
+            class parent {
+                constructor(a,b) {
+                    this.name=a;
+                    this.age=b;
+                }
+                one()  {
+                   return this.name
+                }
+            }
+            class child extends parent {
+                constructor(a,b,c) {
+                    super(a,b)
+                  this.place=c
+                }
+                two() {
+                     return this.age+ "  " +this.place
+                }
+            }
+            let obj1=new parent("sathya","two")
+            let obj2=new child("sai","two","three")
+            console.log(obj2.two());
+            console.log(obj2.one());
+
+            console.log(obj1.one());
+        </script>
+        
+    </body>
+</html>

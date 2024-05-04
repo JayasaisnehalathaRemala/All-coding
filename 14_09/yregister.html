@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body{
+            background-image: url("./loginimage_01.jpg");
+            background-repeat: no-repeat;
+        }
+        label{
+            font-size: 12px;
+            
+        }
+        form{
+            margin-left: 300px;
+            margin-top: 10px;
+            padding: 20px;
+            background-color:plum;
+            width: 300px;
+        }
+        body{
+            box-sizing: border-box;
+            background-color: lightskyblue;
+        }
+        .register{
+            margin-left: 298px;
+            padding-top: 50px;
+            color: black;
+            
+        }
+        
+       
+        
+    </style>
+</head>
+
+<body>
+    <h3 class="register">Start with this Registration Form:</h3>
+    <form action="">
+        <label for="Username">Username:</label><br>
+        <input style="font-size: 11px; width: 170px;height: 15px;outline: none;" type="text"><br>
+        <span id="userSpan" style="font-size: 10px;color:black;display:none;">Name should start with Y or y and should contain atleast 5 letters</span>
+
+        <label for="Password">Password:</label><br>
+        <input style="font-size: 11px; width: 170px;height: 15px;outline: none;" type="password"><br>
+
+        <label for="Password">Confirm Password:</label><br>
+        <input style="font-size: 11px; width: 170px;height: 15px;outline: none;" type="password"><br>
+        <span id="passwordSpan" style="font-size: 10px;color:black;display:none;">password not matched.please enter correct password</span>
+        
+        <label for="Email">Email:</label><br>
+        <input style="font-size: 11px; width: 170px;height: 15px;outline: none;" type="text"><br>
+        <span id="emailSpan" style="font-size: 10px;color:black;display:none;">Invalid email address.please enter a valid email address</span>
+        
+
+        <label for="Phone Number">Phone Number:</label><br>
+        <input style="font-size: 11px; width: 170px;height: 15px;outline: none;" type="text"><br>
+        <span id="phoneSpan" style="font-size: 10px;color:black;display:none;">invaild phone number. Please enter a 10-digit number starting with 6, 7, 8, or 9.</span>
+
+        <label for="Date Of Birth">Date Of Birth:</label><br>
+        <input type="date"><br><br>
+
+        <input id="sub" type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+
+
+    <script>
+        
+        console.log(document.forms);
+
+        //so if we get only one form,that is their in index strting from 0;
+        getForm=document.forms[0];
+        console.log(getForm);
+        getForm.addEventListener("submit",function(event){
+            event.preventDefault();
+            console.log("hello!!!");
+            
+            console.log(event);
+            console.log(event.target[0].value);
+            console.log(event.target[1].value);
+            console.log(event.target[2].value);
+            console.log(event.target[3].value);
+            console.log(event.target[4].value);
+            console.log(event.target[5].value);
+
+           
+            let userName=event.target[0].value;
+            let passWord=event.target[1].value;
+            let confirmPassword=event.target[2].value;
+            let email1=event.target[3].value;
+            let phoneNumber=event.target[4].value;
+            let dateOfBirth=event.target[5].value;
+            var users=[];
+         users = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[];
+          var olduser=false
+          for (var i = 0; i < users.length; i++) {                                 
+        if (users[i].userName === userName) {
+            olduser = true;
+            break;
+        } 
+    }
+            
+            //userName
+            if(userName.length>=5 &&(userName[0]=="Y"||userName[0]=="y")){
+                // alert("Success");
+                let getuserSpan=document.getElementById("userSpan");
+                getuserSpan.style.display="none";
+                event.target[0].style.border="1px solid black";
+            }
+            else{
+                // alert("Please fill properly");
+                let getuserSpan=document.getElementById("userSpan");
+                getuserSpan.style.display="block";
+                event.target[0].style.border="3px solid red";
+            }
+
+            //password and confirmPassword
+            if(passWord==confirmPassword){
+                // alert("password matched.procedd!!");
+                let getpasswordSpan=document.getElementById("passwordSpan");
+                getpasswordSpan.style.display="none";
+                event.target[1].style.border="1px solid black";
+                event.target[2].style.border="1px solid black";
+
+            }
+            else{
+                // alert("password not matched.please enter correct password");
+                let getpasswordSpan=document.getElementById("passwordSpan");
+                getpasswordSpan.style.display="block";
+                event.target[1].style.border="3px solid red";
+                event.target[2].style.border="3px solid red";
+            }
+
+            //email
+            if(email1.endsWith("@gmail.com")){
+                // alert("valid email adderess")
+                let getemailSpan=document.getElementById("emailSpan");
+                getemailSpan.style.display="none";
+                event.target[3].style.border="1px solid black"
+
+            }
+            else{
+                // alert("Invalid email address.please enter a valid email address");
+                let getemailSpan=document.getElementById("emailSpan");
+                getemailSpan.style.display="block";
+                event.target[3].style.border="3px solid red";
+            }
+
+            //phone number 
+            if(phoneNumber.length==10 && ((phoneNumber.charAt(0)=="6")||(phoneNumber.charAt(0)=="7")||(phoneNumber.charAt(0)=="8")||(phoneNumber.charAt(0)=="9"))){
+                // alert("valid phone number");
+                let getphoneSpan=document.getElementById("phoneSpan");
+                getphoneSpan.style.display="none";
+                event.target[4].style.border="1px solid black"
+            }
+            else{
+                // alert("invaild phone number. Please enter a 10-digit number starting with 6, 7, 8, or 9.");
+                let getphoneSpan=document.getElementById("phoneSpan");
+                getphoneSpan.style.display="block";
+                event.target[4].style.border="3px solid red";
+            }
+            let spa2=document.getElementById("sub")
+           spa2.addEventListener("click",function() {
+            if((userName.length>=5 &&(userName[0]=="Y"||userName[0]=="y"))&&(passWord==confirmPassword)&&(email1.endsWith("@gmail.com"))&&phoneNumber.length==10 && ((phoneNumber.charAt(0)=="6")||(phoneNumber.charAt(0)=="7")||(phoneNumber.charAt(0)=="8")||(phoneNumber.charAt(0)=="9"))){
+                // alert("Registraion successfull!!!!");
+                // window.open("JS_30_09_Form_Validation_Login.html");
+                if(olduser) {
+        alert("User name already exists ")
+    }
+    else {
+        var newUser = {
+        userName: userName,
+        passWord: passWord,
+        dateOfBirth:dateOfBirth,
+        email1:email1,
+        phoneNumber:phoneNumber
+    } 
+        users.push(newUser) // Append the new user to the end of the array
+        console.log(users);
+        localStorage.setItem("users", JSON.stringify(users));
+        alert("Registration Suceesful")
+        window.open("ylogin.html");
+
+        // console.log("User registration successful.");
+    // console.log(users);
+        
+} 
+ }
+})
+ })
+    </script>
+</body>
+</html>

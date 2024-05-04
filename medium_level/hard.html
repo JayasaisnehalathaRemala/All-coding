@@ -1,0 +1,153 @@
+<html>
+  <body>
+    <!-- <script>
+//     1.    Create a function that converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized.
+
+// Examples :
+
+// toCamelCase("A-B-C") ➞ "ABC"
+
+// toCamelCase("the-stealth-warrior") ➞ "theStealthWarrior"
+
+// toCamelCase("The_Stealth_Warrior") ➞ "TheStealthWarrior"
+// var b=""
+// function toCamelCase(a) {
+//     for(var i=0;i<a.length;i++) {
+//     if(a[i]=="-" || a[i]=="_") {
+//     a[i+1]=a[i+1].toUpperCase()
+//    }
+//    else {  b=b+a[i]  }
+//  }
+//     return b
+// }
+
+// // console.log(toCamelCase("The_Stealth_Warrior"));
+// console.log(toCamelCase("the-stealth-warrior"));
+// b=""
+// console.log(toCamelCase("A-B-C"));
+// b=""
+// console.log(toCamelCase("The_Stealth_Warrior"));
+//     </script> -->
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- <script>
+//   2.  Create a function that takes an array of strings and returns an array with only the strings that have numbers in them. If there are no strings containing numbers, return an empty array.	
+
+// Examples :
+
+// numInStr(["1a", "a", "2b", "b"]) ➞ ["1a", "2b"]
+
+// numInStr(["abc", "abc10"]) ➞ ["abc10"]
+
+// numInStr(["abc", "ab10c", "a10bc", "bcd"]) ➞ ["ab10c", "a10bc"]
+
+// numInStr(["this is a test", "test1"]) ➞ ["test1"]
+
+var a=[]
+var f=0;
+function numInStr(b) {
+    a=[]
+    for(var i=0;i<b.length;i++) {
+        var c=b[i]
+        for(var j=0;j<c.length;j++) {
+            if(c[j]=="0"  ||c[j] =="1"  || c[j]=="2"  || c[j]=="3"  || c[j]=="4"  || c[j]=="5"  || c[j]=="6"  || c[j]=="7"  || c[j]=="8"   || c[j]=="9") {
+               a[f]=b[i]
+               f++;
+                break
+            }
+        }
+    }
+    return a 
+}
+ console.log(numInStr(["1a", "a", "2b", "b"]));
+
+// console.log(numInStr(["abc", "abc10"])); -->
+    <!-- </script> -->
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- 3.Write a function that takes a list of hours and returns the total weekly salary.
+The input list hours is listed sequentially, ordered from Monday to Sunday.
+A worker earns $10 an hour for the first 8 hours.
+For every overtime hour, he earns $15.
+On weekends, the employer pays double the usual rate, regardless how many hours were worked previously that week. For instance, 10 hours worked on a weekday would pay 80+30 = $110, but on a weekend it would pay 160+60 = $220.
+
+Examples :
+weeklySalary([8, 8, 8, 8, 8, 0, 0]) ➞ 400
+weeklySalary([10, 10, 10, 0, 8, 0, 0]) ➞ 410
+weeklySalary([0, 0, 0, 0, 0, 12, 0]) ➞ 280 -->
+
+    <!-- <script>
+      debugger;
+      function weeklySalary(a) {
+        let sum = 0;
+        for (i = 0; i < a.length; i++) {
+          if (a[i] > 8) {
+            if (i > 4) {
+              a[i] = a[i] * 10;
+            } else {
+              a[i] = a[i] * 10;
+            }
+            a[i] = (a[i] - 8) * 20;
+          } else {
+            a[i] = a[i] * 10;
+          }
+        }
+        for (i = 0; i < a.length; i++) {
+          sum = sum + a[i];
+        }
+        return sum;
+      }
+      //  console.log(weeklySalary([8, 8, 8, 8, 8, 0, 0]) );
+      // console.log(weeklySalary([10, 10, 10, 0, 8, 0, 0]) );
+      console.log(weeklySalary([0, 0, 0, 0, 0, 12, 0]));
+    </script> -->
+
+    <!-- <script>
+    debugger
+var a=[5, 7, 3, 2, 2, 7,-1, 5, -3, 13, 4];
+    var b=[7, -1, 5, -3];
+    var c=0;
+    var main=false;
+    for(i=0;i<a.length;i++){
+        for(j=0;j<b.length;j++){
+            if(a[i]==b[j]&&a[i+1]==b[j+1]&&a[i+2]==b[j+2]&&a[i+3]==b[j+3]){
+                main=true;
+                console.log(true);
+            }
+            
+            
+        }
+    }
+    if(!main){
+        console.log(false);
+    }
+</script> -->
+
+    <script>
+      a = [2, 6, 2, , 1, 1, 8, 1, 1];
+      b = [];
+      for (i = 0; i < a.length; i++) {
+        count = 1;
+        for (j = i + 1; j < a.length; j++) {
+          if (a[i] == a[j]) {
+            count = count + 1;
+            b[j] = -1;
+          }
+        }
+        if (b[i] != -1) {
+          b[i] = count;
+        }
+      }
+      let c=0;
+      for (k = 0; k < b.length; k++) {
+        if (b[k] > 1 && a[k] % 2 == 0) {
+          c++;
+          console.log(a[k]);
+        }
+      }
+      console.log(c);
+    </script>
+  </body>
+</html>

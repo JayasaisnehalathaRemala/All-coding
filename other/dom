@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <button>click me</button>
+
+    <h1 id="one">good morning</h1>
+    <h1 id="two">good evening</h1>
+    <div id="three">
+        <h2>welcome</h2>
+        <h1 id="four">to remove</h1>
+        <h1 id="five">another remove</h1>
+        <h1 id="six">old one</h1>
+<img src="" alt="">
+    </div>
+    <h1>sorry</h1>
+    <script>
+        let dom=document.getElementById("one");
+        dom.innerText="i  am <span>sneha</span>";
+        let dom2=document.getElementById("two");
+        dom2.innerHTML="i am <span>sneha</span>"
+        let divv=document.getElementById("three")
+        let heading=document.createElement("h1")
+        heading.innerHTML="good night"
+        divv.appendChild(heading)
+        console.log(heading);
+
+        let image=document.createElement("img")
+        image.setAttribute("src","https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Images-Wallpaper-HD-Background.jpg")
+        divv.appendChild(image)
+        image.style.width="200px";
+        image.style.height="200px"
+        console.log(image);
+        let deleteone=document.getElementById("four")
+        divv.removeChild(deleteone)
+        let anotherDelete=document.getElementById("five")
+        anotherDelete.remove();
+        let newh3=document.createElement("h3")
+        newh3.innerText="new one"
+        let oldone=document.getElementById("six")
+        divv.replaceChild(newh3,oldone)
+        var a="welcome to the world"
+        document.write(a)
+
+        let btn=document.querySelector("button");
+        btn.addEventListener("mouseover",()=>{
+            console.log("i am here");
+            let h2here=document.createElement("h2")
+               h2here.innerText="i am here";
+document.body.appendChild(h2here);
+        });
+    </script>
+    </body>
+
+</html>
+
+
+<!-- events :
+click       addeventlistner.("evnetname","callback function")
+onmouseover
+onchange -->
+
+<!-- 
+dom methods :
+
+1.get element by id
+2.get element by tag name
+3.get elementby classname
+4.queryselector
+5.queryselectorall -->
+
+<!-- innerText
+innerHtml -->
+
+
+<!-- set setAttribute("src",image link) -->
